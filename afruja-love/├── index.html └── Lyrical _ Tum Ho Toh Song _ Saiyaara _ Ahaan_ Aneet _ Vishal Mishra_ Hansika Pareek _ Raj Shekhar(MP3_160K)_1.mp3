@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Afruja ♡ Nurislam</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Parisienne&display=swap');
+
+*{box-sizing:border-box;margin:0}
+
+body{
+  font-family:Arial,sans-serif;
+  color:#71384f;
+  background:linear-gradient(135deg,#ffd9e8,#e8c5ee);
+}
+
+.open{
+  position:fixed;
+  inset:0;
+  z-index:10;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:white;
+  background:radial-gradient(circle,#fff5fa,#f5afd0 45%,#d8a7e5);
+  transition:1s;
+}
+
+.open.hide{
+  opacity:0;
+  pointer-events:none;
+  transform:scale(1.08);
+}
+
+.box{
+  animation:float 2.5s infinite;
+}
+
+.teddy{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ffc8dc,#e96e9c);
+  margin:auto;
+  position:relative;
+  box-shadow:0 20px 50px #92375a55;
+  cursor:pointer;
+}
+
+.ear{
+  position:absolute;
+  width:60px;
+  height:60px;
+  top:-15px;
+  border-radius:50%;
+  background:#f18ab1;
+}
+
+.l{left:5px}
+.r{right:5px}
+
+.face{
+  position:absolute;
+  left:25px;
+  top:45px;
+  width:120px;
+  height:105px;
+  border-radius:50%;
+  background:#ffb9d1;
+}
+
+.eye{
+  position:absolute;
+  top:35px;
+  width:11px;
+  height:15px;
+  border-radius:50%;
+  background:#54233a;
+}
+
+.eye.l{left:30px}
+.eye.r{right:30px}
+
+.nose{
+  position:absolute;
+  left:50%;
+  top:55px;
+  transform:translateX(-50%);
+  width:18px;
+  height:14px;
+  border-radius:50%;
+  background:#87334f;
+}
+
+.heart{
+  position:absolute;
+  right:-20px;
+  bottom:0;
+  font-size:38px;
+}
+
+.tap{
+  font-size:35px;
+  margin-top:20px;
+}
+
+.open h1{
+  font:38px "DM Serif Display";
+  margin-top:20px;
+}
+
+.open p{
+  font-size:10px;
+  letter-spacing:4px;
+  margin-top:8px;
+}
+
+main{
+  min-height:100vh;
+  padding:25px 0 60px;
+}
+
+.card{
+  width:92%;
+  max-width:520px;
+  margin:auto;
+  padding:35px 20px;
+  text-align:center;
+  border-radius:35px;
+  background:#ffffff55;
+  border:1px solid #ffffff99;
+  box-shadow:0 25px 70px #71384f22;
+  backdrop-filter:blur(18px);
+}
+
+.small{
+  font-size:10px;
+  letter-spacing:4px;
+}
+
+h1.big{
+  font:clamp(55px,15vw,80px) "DM Serif Display";
+  color:#8c3158;
+  line-height:.9;
+  margin-top:15px;
+}
+
+.name{
+  font:55px Parisienne;
+  color:#a33c68;
+  margin-top:20px;
+}
+
+.names{
+  font-style:italic;
+  margin-top:5px;
+}
+
+.line{
+  width:80px;
+  height:2px;
+  background:#b35478;
+  margin:25px auto;
+}
+
+.text{
+  text-align:left;
+  font:italic 15px Georgia;
+  line-height:1.9;
+}
+
+.text p{
+  margin-bottom:20px;
+}
+
+h2{
+  font:30px "DM Serif Display";
+  color:#8d3158;
+  margin:35px 0 8px;
+}
+
+.sub{
+  font:italic 13px Georgia;
+  line-height:1.7;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px;
+}
+
+.item{
+  padding:22px 10px;
+  min-height:145px;
+  border-radius:23px;
+  background:#ffffff45;
+  border:1px solid #ffffff77;
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.item h3{
+  color:#8d3158;
+  font-family:Georgia;
+}
+
+.item p{
+  font:italic 11px Georgia;
+  line-height:1.6;
+  margin-top:7px;
+}
+
+.quote{
+  margin-top:25px;
+  padding:25px 15px;
+  border-radius:25px;
+  background:#ffffff44;
+  font:20px/1.7 "DM Serif Display";
+  color:#8c3158;
+}
+
+.choco{
+  margin:30px auto 10px;
+  width:150px;
+  height:85px;
+  border-radius:15px;
+  background:linear-gradient(145deg,#9b5a3e,#432016);
+  position:relative;
+  box-shadow:0 18px 30px #43201644;
+  animation:float 2.5s infinite;
+}
+
+.choco:after{
+  content:"LOVE";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#ffdcca;
+  font-family:Georgia;
+  letter-spacing:2px;
+}
+
+.chocoText{
+  color:#8c3158;
+  font:21px "DM Serif Display";
+}
+
+.promise{
+  display:flex;
+  gap:12px;
+  text-align:left;
+  padding:15px;
+  margin-top:12px;
+  border-radius:20px;
+  background:#ffffff45;
+}
+
+.promise span{
+  font-size:24px;
+}
+
+.promise p{
+  font:italic 12px/1.7 Georgia;
+}
+
+.final{
+  margin-top:35px;
+  padding:30px 18px;
+  border-radius:30px;
+  background:#ffffff55;
+}
+
+.final h2{
+  font:45px Parisienne;
+  margin:0;
+}
+
+.final p{
+  font:italic 14px/2 Georgia;
+  margin-top:15px;
+}
+
+.sign{
+  font:38px Parisienne;
+  color:#96355f;
+  margin-top:25px;
+}
+
+.p{
+  position:fixed;
+  bottom:-20px;
+  z-index:5;
+  animation:up 7s linear forwards;
+  pointer-events:none;
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+@keyframes up{
+  to{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:350px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div class="open" id="open">
+
+  <div class="box">
+
+    <div class="teddy" id="teddy">
+
+      <div class="ear l"></div>
+      <div class="ear r"></div>
+
+      <div class="face">
+        <div class="eye l"></div>
+        <div class="eye r"></div>
+        <div class="nose"></div>
+      </div>
+
+      <div class="heart">💗</div>
+
+    </div>
+
+    <div class="tap">👆</div>
+
+    <h1>A Little Surprise</h1>
+    <p>TAP THE TEDDY</p>
+
+  </div>
+
+</div>
+
+
+<main>
+
+<div class="card">
+
+  <div class="small">MADE WITH A LITTLE LOVE</div>
+
+  <h1 class="big">
+    I Love<br>
+    You ❤️
+  </h1>
+
+  <div class="name">Afruja</div>
+
+  <div class="names">
+    Afruja ♡ Nurislam
+  </div>
+
+  <div class="line"></div>
+
+  <div class="text">
+
+    <p>
+      Dear Afruja, sometimes the smallest moments become
+      the sweetest memories. A simple conversation, a smile,
+      or a little happiness can stay in our hearts for a long time.
+    </p>
+
+    <p>
+      Love is about kindness, understanding, listening,
+      respecting each other and appreciating the little things.
+    </p>
+
+    <p>
+      This little page is a tiny collection of beautiful
+      thoughts and smiles made especially for you.
+    </p>
+
+    <p>
+      I hope whenever you see this page, it gives you
+      one small reason to smile. 🌷
+    </p>
+
+  </div>
+
+
+  <h2>Our Little Memories 💗</h2>
+
+  <div class="sub">
+    The little moments are sometimes the most beautiful ones.
+  </div>
+
+  <div class="grid">
+
+    <div class="item">
+      <div class="icon">🌷</div>
+      <h3>Sweet Moments</h3>
+      <p>Little moments that make ordinary days special.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">🥰</div>
+      <h3>Happy Smiles</h3>
+      <p>Smiles that make simple moments unforgettable.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">💌</div>
+      <h3>Little Talks</h3>
+      <p>Simple conversations become special memories.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">✨</div>
+      <h3>Beautiful Days</h3>
+      <p>Every good day becomes another memory.</p>
+    </div>
+
+  </div>
+
+
+  <div class="quote">
+    “The sweetest kind of love is gentle, honest,
+    caring and full of respect.” 🥰
+  </div>
+
+
+  <h2>Little Things 🌸</h2>
+
+  <div class="grid">
+
+    <div class="item">
+      <div class="icon">🌷</div>
+      <h3>Your Smile</h3>
+      <p>A little smile can brighten an ordinary day.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">💌</div>
+      <h3>Kind Words</h3>
+      <p>Kind words can make someone feel appreciated.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">🫶</div>
+      <h3>Care</h3>
+      <p>Caring means listening, understanding and helping.</p>
+    </div>
+
+    <div class="item">
+      <div class="icon">✨</div>
+      <h3>Memories</h3>
+      <p>Small moments can become unforgettable memories.</p>
+    </div>
+
+  </div>
+
+
+  <h2>🍫 A Little Chocolate For You</h2>
+
+  <div class="choco"></div>
+
+  <div class="chocoText">
+    Because you deserve a sweet surprise ✨
+  </div>
+
+
+  <h2>Little Promises 💌</h2>
+
+  <div class="promise">
+    <span>🌸</span>
+    <p>
+      I promise to always listen, understand, respect,
+      support, appreciate, and cherish you sincerely.
+    </p>
+  </div>
+
+  <div class="promise">
+    <span>🫶</span>
+    <p>
+      I promise to respect your feelings, value your thoughts,
+      and encourage your dreams always.
+    </p>
+  </div>
+
+  <div class="promise">
+    <span>✨</span>
+    <p>
+      I promise to appreciate little moments, create beautiful
+      memories, and celebrate your happiness.
+    </p>
+  </div>
+
+  <div class="promise">
+    <span>💗</span>
+    <p>
+      I promise to choose kindness, honesty, patience,
+      understanding, and respect in every moment together.
+    </p>
+  </div>
+
+
+  <div class="final">
+
+    <h2>For You, Afruja</h2>
+
+    <p>
+      If this little page made you smile, then it has already
+      done exactly what it was created to do.
+      <br><br>
+
+      May your days always have little reasons to smile,
+      peaceful moments, kind people and beautiful memories.
+      <br><br>
+
+      Someone made this tiny corner of the internet
+      especially for you. 💗
+    </p>
+
+    <div class="sign">
+      Afruja ♡ Nurislam
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+
+
+<!-- ============================= -->
+<!-- 🎵 YOUR ACTUAL MP3 FILE -->
+<!-- ============================= -->
+
+<audio id="loveSong" preload="auto">
+  <source
+    src="Lyrical%20_%20Tum%20Ho%20Toh%20Song%20_%20Saiyaara%20_%20Ahaan_%20Aneet%20_%20Vishal%20Mishra_%20Hansika%20Pareek%20_%20Raj%20Shekhar%28MP3_160K%29_1.mp3"
+    type="audio/mpeg">
+</audio>
+
+
+<script>
+
+const open = document.getElementById("open");
+const teddy = document.getElementById("teddy");
+const loveSong = document.getElementById("loveSong");
+
+let playing = false;
+
+teddy.addEventListener("click", function(){
+
+  // Open website
+  open.classList.add("hide");
+
+  // Start song
+  if(!playing){
+
+    playing = true;
+
+    loveSong.currentTime = 0;
+    loveSong.volume = 0.8;
+
+    loveSong.play()
+      .then(() => {
+        console.log("Song started successfully");
+      })
+      .catch((error) => {
+        console.log("Audio error:", error);
+      });
+
+    // Stop after 30 seconds
+    setTimeout(function(){
+
+      loveSong.pause();
+      loveSong.currentTime = 0;
+
+    }, 30000);
+  }
+
+  // Hide opening screen completely
+  setTimeout(function(){
+    open.style.display = "none";
+  },1000);
+
+});
+
+
+// Floating hearts
+setInterval(function(){
+
+  const p = document.createElement("div");
+
+  p.className = "p";
+
+  p.textContent = [
+    "💗",
+    "💕",
+    "✨",
+    "🌸",
+    "♡"
+  ][Math.floor(Math.random()*5)];
+
+  p.style.left =
+    Math.random()*100 + "vw";
+
+  p.style.fontSize =
+    12 + Math.random()*18 + "px";
+
+  p.style.animationDuration =
+    5 + Math.random()*5 + "s";
+
+  document.body.appendChild(p);
+
+  setTimeout(function(){
+    p.remove();
+  },10000);
+
+},900);
+
+</script>
+
+</body>
+</html>
